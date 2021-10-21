@@ -1,0 +1,25 @@
+print("Введите кодовое слово start")
+2
+j = input("")
+3
+try:
+4
+    
+5
+    j = start 
+6
+    print('Получен неверный ключ')
+7
+    j = input()
+8
+​
+9
+except:
+10
+    f = open("C:\Users\Admin\Desktop\lecture5\task1.txt", 'r')
+11
+    
+  File "C:\Users\Admin\AppData\Local\Temp/ipykernel_7080/3658585979.py", line 10
+    f = open("C:\Users\Admin\Desktop\lecture5\task1.txt", 'r')
+             ^
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
