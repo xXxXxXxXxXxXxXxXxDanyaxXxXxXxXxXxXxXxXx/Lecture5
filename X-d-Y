@@ -1,0 +1,60 @@
+
+data = input('')
+
+nomberOFcubes = ''
+
+for i in range(len(data)):
+    if data[i] != 'd':
+        nomberOFcubes += str(data[i])
+    else:
+        break
+print('Количество кубиков =>',nomberOFcubes)
+
+nomberOFsides = ''
+
+for i in range(len(data)):
+    if data[i] == 'd':
+        nomberOFsides += data[i+1:]
+        break
+print('Количество сторон =>',nomberOFsides)
+
+nomberOFsides = int(nomberOFsides)
+
+nomberOFcubes = int(nomberOFcubes)
+
+if nomberOFcubes == 1:
+    SuperMassive = []
+    print('Вероятности возможных сумм =>')
+    for i in range(1,nomberOFsides+1):
+        SuperMassive.append(i)
+        
+if nomberOFcubes > 1:
+    SuperMassive = []
+    for i in range(nomberOFsides):
+        element = 2 + i
+        for i in range(nomberOFsides):
+            component = element + i
+            SuperMassive.append(component)
+    print('1 =>',SuperMassive)
+    
+if nomberOFcubes > 2:
+    for w in range(3,nomberOFcubes+1):
+        SuperMassive2 = []
+        for i in range(1,nomberOFsides + 1):
+
+            for l in range(len(SuperMassive)):
+                newElement = SuperMassive[l] + i
+                SuperMassive2.append(newElement)
+            print(w ,'=>',SuperMassive2)
+        SuperMassive = SuperMassive2
+            
+SuperMassive = sorted(SuperMassive)
+print(SuperMassive)
+
+for i in range(len(SuperMassive)-1):
+    if SuperMassive[i] != SuperMassive[i+1]:
+        chance = (SuperMassive.count(SuperMassive[i]) / len(SuperMassive))*100
+        print(SuperMassive[i], '=' ,chance, '%')
+if SuperMassive[-1] != SuperMassive[-2]:
+    chance = (SuperMassive.count(SuperMassive[-1]) / len(SuperMassive))*100
+    print(SuperMassive[-1], '=' ,chance, '%') 
