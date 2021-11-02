@@ -1,25 +1,24 @@
 print("Введите кодовое слово start")
-2
-j = input("")
-3
+
+j = input('')
+
 try:
-4
-    
-5
-    j = start 
-6
+    j == start
     print('Получен неверный ключ')
-7
     j = input()
-8
-​
-9
+
 except:
-10
-    f = open("C:\Users\Admin\Desktop\lecture5\task1.txt", 'r')
-11
+    with open("C:\\Users\Admin\\Desktop\\lecture5\\task1.txt",'r') as file:
+        g = []
+        l = file.readlines()
+        g.extend(l)
+        print(g)
+        for i in range(len(g)):
+            g[i] = int(g[i])
+        for i in range(len(g)):
+            for j in range(len(g)):
+                for a in range(len(g)):
+                    if g[i]+g[j]+g[a] == 2020:
+                        with open("C:\\Users\Admin\\Desktop\\lecture5\\output1.txt",'w') as file2:
+                            file2.write(str(g[i] * g[j] * g[a]))
     
-  File "C:\Users\Admin\AppData\Local\Temp/ipykernel_7080/3658585979.py", line 10
-    f = open("C:\Users\Admin\Desktop\lecture5\task1.txt", 'r')
-             ^
-SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
